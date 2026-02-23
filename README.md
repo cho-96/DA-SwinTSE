@@ -53,7 +53,7 @@ python train.py --folder_path path/to/data/ --data name --model_path path/to/mod
 #### Example 2: Test the DA-SwinTSE model
 
 ```bash
-python test.py --folder_path path/to/data/ --data name --model_path path/to/model/ --model_name model_name
+python test.py --folder_path path/to/data/ --data name --config config --model_path path/to/model/ --model_name model_name
 ```
 
 

@@ -10,7 +10,7 @@ from models.data import CustomDataset, expand_dims_n
 def get_args():
     parser = argparse.ArgumentParser(description="Train DA-SwinTSE Model")
     parser.add_argument('--folder_path', type=Path, required=True, help='Path to processed data folder')
-    parser.add_argument('--name', type=str, required=True, help='Experiment or Site name')
+    parser.add_argument('--data', type=str, required=True, help='Experiment or Site name')
     parser.add_argument('--model_path', type=Path, required=True, help='Base path to save models')
     parser.add_argument('--mode', type=str, default='speed', help='Traffic state mode (e.g., speed)')
     parser.add_argument('--embed_dim', type=int, default=24)
