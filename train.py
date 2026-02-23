@@ -14,13 +14,13 @@ def get_args():
     parser.add_argument('--model_path', type=Path, required=True, help='Base path to save models')
     parser.add_argument('--mode', type=str, default='speed', help='Traffic state mode (e.g., speed)')
     parser.add_argument('--embed_dim', type=int, default=24)
-    parser.add_argument('--K', type=int, default=1, help='Number of CSTB') # 3
-    parser.add_argument('--L', type=int, default=1, help='Number of STL') # 4
+    parser.add_argument('--K', type=int, default=3, help='Number of CSTB')
+    parser.add_argument('--L', type=int, default=4, help='Number of STL')
     parser.add_argument('--window_size', type=int, default=16)
-    parser.add_argument('--batch_size', type=int, default=1) # 32
+    parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--max_speed', type=int, default=80) 
     parser.add_argument('--lr', type=float, default=0.001)
-    parser.add_argument('--epochs', type=int, default=1) # 20
+    parser.add_argument('--epochs', type=int, default=20)
     return parser.parse_args()
 
 def main():
