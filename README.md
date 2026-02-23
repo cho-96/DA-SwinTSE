@@ -67,8 +67,8 @@ Suppose the input and output files are named `input_train.npy` and `output_train
   - **200** = consecutive time steps (temporal cell size = 200)  
   Each cell contains the **normalized average speed** of vehicles in that spatial–temporal bin.
 
-- **Camera coverage in `input_train.npy`**:  
-  If the camera covers only 2 spatial rows, only those rows contain speed values, and all other rows are filled with zeros to indicate missing observations.
+- **Sparse sensor coverage in `input_train.npy`**:  
+  For regions with partial sensor coverage, speed values are populated only at the corresponding spatial indices. All other cells representing unobserved areas are zero-padded to denote missing observations.
 
 - **input_train.npy**: Matrix of normalized average speeds for the sensor-detected region (zeros elsewhere, as described above).  
 
