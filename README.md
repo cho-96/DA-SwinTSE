@@ -2,7 +2,7 @@
 
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/cho-96/SwinTSE/blob/main/LICENSE) [![Development Status](https://img.shields.io/badge/development-active-brightgreen)](https://github.com/cho-96/DA-SwinTSE)
 
-**DA-SwinTSE** is a novel Traffic State Estimation (TSE) framework specifically engineered for unmonitored highway segments. Built upon a double-attention Swin Transformer and occupancy-aware gated convolutional layers, the model effectively captures long-range spatiotemporal dependencies while eliminating border artifacts. The double-attention mechanism meticulously constrains the attention mask to free-flow and congested propagation zones, strictly adhering to kinematic wave theory. To handle data sparsity, gated convolutional layers dynamically filter invalid or unobserved pixels in sensor-undetected regions, while the occupancy-aware architecture explicitly models sensor-occupied cells to accommodate dynamic probe vehicle measurements. By being trained exclusively on simulated data via domain randomization, DA-SwinTSE learns fundamental traffic dynamics, significantly enhancing its sim-to-real generalization capabilities.
+**DA-SwinTSE** is a novel Traffic State Estimation (TSE) framework specifically engineered for unmonitored highway segments. Built upon a double-attention Swin Transformer and occupancy-aware gated convolutional layers, the model effectively captures long-range spatiotemporal dependencies while eliminating border artifacts. The double-attention mechanism meticulously constrains the attention mask to free-flow and congested propagation zones, strictly adhering to kinematic wave theory. To handle data sparsity, gated convolutional layers dynamically filter invalid or unobserved pixels in sensor-undetected regions, while the occupancy-aware architecture explicitly models sensor-occupied cells to accommodate dynamic probe vehicle measurements. By being trained exclusively on simulated data, DA-SwinTSE learns fundamental traffic dynamics, significantly enhancing its sim-to-real generalization capabilities.
 
 ![DA-SwinTSE architecture](figs/DASwinTSE.jpg)
 
@@ -87,9 +87,9 @@ If you use **DA-SwinTSE** in your research, software, or to generate datasets, p
       author = {Haechan, Cho},
       license = {MIT},
       month = december,
-      title = { A double-attention Swin Transformer with occupancy-aware gated convolution and domain randomization for highway traffic state estimation },
+      title = { A double-attention Swin Transformer with occupancy-aware gated convolution for highway traffic state stimation },
       url = {https://github.com/cho-96/DA-SwinTSE},
-      year = {2025}
+      year = {2026}
     }
     ```
 
