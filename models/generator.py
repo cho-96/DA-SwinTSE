@@ -337,18 +337,18 @@ class DoubleSwinTransformerBlock(nn.Module):
         eye = torch.eye(ws*ws, device=device, dtype=torch.bool)
 
         dt_pos = dt > 0
-        dy_up  = dy >= 0
-        speed  = torch.zeros_like(dy)
-        speed[dt_pos] = dy[dt_pos] / dt[dt_pos]         
-        allow_v = (dt_pos & dy_up & (speed >= cv_min) & (speed <= cv_max)) | eye
+        dy_forward = dy <= 0
+        speed = torch.zeros_like(dy)
+        speed[dt_pos] = (-dy[dt_pos]) / dt[dt_pos]   # 부호 반대이므로 -dy로 크기 계산
+        allow_v = (dt_pos & dy_forward & (speed >= cv_min) & (speed <= cv_max)) | eye
 
         cone_v = torch.zeros(ws*ws, ws*ws, device=device)
-        cone_v[~allow_v] = -100.0                     
+        cone_v[~allow_v] = -100.0                    
 
-        dy_down = dy <= 0
+        dy_backward = dy >= 0
         speed_w = torch.zeros_like(dy)
-        speed_w[dt_pos] = torch.abs(dy[dt_pos]) / dt[dt_pos]
-        allow_w = (dt_pos & dy_down & (speed_w >= cw_min) & (speed_w <= cw_max)) | eye
+        speed_w[dt_pos] = dy[dt_pos] / dt[dt_pos]
+        allow_w = (dt_pos & dy_backward & (speed_w >= cw_min) & (speed_w <= cw_max)) | eye
 
         cone_w = torch.zeros(ws*ws, ws*ws, device=device)
         cone_w[~allow_w] = -100.0
